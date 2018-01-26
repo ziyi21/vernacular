@@ -13,9 +13,3 @@ if __name__ == "__main__":
 else:
     print("two.py is being imported into another module")
 
-
-'不知道这次的分支对不对'
-
-'这次是localmaster'
-
-'dev的分支内容是新建的'
