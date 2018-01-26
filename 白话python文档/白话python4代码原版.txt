@@ -1,0 +1,1165 @@
+"D:\anaconda python\python3.6.exe" "D:\program\PyCharm Community Edition 2017.3.1\helpers\pydev\pydevconsole.py" 51456 51457
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['D:\\vernacular', 'D:/vernacular'])
+Python 3.6.0 |Anaconda custom (64-bit)| (default, Dec 23 2016, 11:57:41) [MSC v.1900 64 bit (AMD64)]
+Type "copyright", "credits" or "license" for more information.
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+PyDev console: using IPython 5.1.0
+Python 3.6.0 |Anaconda custom (64-bit)| (default, Dec 23 2016, 11:57:41) [MSC v.1900 64 bit (AMD64)] on win32
+a=()
+a=(range(8))
+a
+Out[4]: 
+range(0, 8)
+a=tuple(range(8))
+a
+Out[6]: 
+(0, 1, 2, 3, 4, 5, 6, 7)
+a.index(4)
+Out[7]: 
+4
+a.count(4)
+Out[8]: 
+1
+list_generate = (i+5 for i in range(50) if i%5==0)
+print(list_generate)
+<generator object <genexpr> at 0x00000081088400F8>
+list_generate.__next__()
+Out[11]: 
+5
+list_generate.__next__()
+Out[12]: 
+10
+a=(1,5,2)
+a
+Out[14]: 
+(1, 5, 2)
+b=(2)
+b
+Out[16]: 
+2
+b=(2,)
+b
+Out[18]: 
+(2,)
+change = a[2,3,4]
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-19-8b70d4f970b9>", line 1, in <module>
+    change = a[2,3,4]
+TypeError: tuple indices must be integers or slices, not tuple
+change = l[2,3,4]
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-20-2cba5cd75692>", line 1, in <module>
+    change = l[2,3,4]
+NameError: name 'l' is not defined
+l=[]
+l=[2,3,4]
+t=(1,l,3)
+t
+Out[24]: 
+(1, [2, 3, 4], 3)
+t(2[2])=4
+  File "<ipython-input-25-d0336250bc5a>", line 1
+    t(2[2])=4
+             ^
+SyntaxError: can't assign to function call
+t(2)=4
+  File "<ipython-input-26-c3887a9685aa>", line 1
+    t(2)=4
+          ^
+SyntaxError: can't assign to function call
+t(1[2])=4
+  File "<ipython-input-27-d708c620a9d6>", line 1
+    t(1[2])=4
+             ^
+SyntaxError: can't assign to function call
+t(1)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-28-ef9695810c7a>", line 1, in <module>
+    t(1)
+TypeError: 'tuple' object is not callable
+t
+Out[29]: 
+(1, [2, 3, 4], 3)
+t(0)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-30-87279a086389>", line 1, in <module>
+    t(0)
+TypeError: 'tuple' object is not callable
+t.index(1)
+Out[31]: 
+0
+t[1]
+Out[32]: 
+[2, 3, 4]
+t[1]=3
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-33-fb4b5d91ad77>", line 1, in <module>
+    t[1]=3
+TypeError: 'tuple' object does not support item assignment
+t[1][2]=3
+t
+Out[35]: 
+(1, [2, 3, 3], 3)
+str_test='python的数据类型'
+str_test.index(p)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-37-be23c17df325>", line 1, in <module>
+    str_test.index(p)
+NameError: name 'p' is not defined
+str_test.index('p')
+Out[38]: 
+0
+str_test.index('我们')
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-39-763b43692804>", line 1, in <module>
+    str_test.index('我们')
+ValueError: substring not found
+str_test.index('我')
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-40-7736d723bb32>", line 1, in <module>
+    str_test.index('我')
+ValueError: substring not found
+str_test.index('数据')
+Out[41]: 
+7
+str_test='python的数据类型'
+str_test.index('数据')
+Out[43]: 
+7
+str_test.endswith('数据')
+Out[44]: 
+False
+str_test.endswith('类型')
+Out[45]: 
+True
+list0=[2,4,6,8,10]
+list00=[3,5,7]
+list0.extend(list00)
+list0
+Out[49]: 
+[2, 4, 6, 8, 10, 3, 5, 7]
+list0.remove(7)
+list0
+Out[51]: 
+[2, 4, 6, 8, 10, 3, 5]
+str_test.find('类型')
+Out[52]: 
+9
+str_test.count('p')
+Out[53]: 
+1
+str_test.count('p',beg=3)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-54-adeccf9625ec>", line 1, in <module>
+    str_test.count('p',beg=3)
+TypeError: count() takes no keyword arguments
+str_test.count('p',beg=3,end=len(str_test))
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-55-c7ff6267bf22>", line 1, in <module>
+    str_test.count('p',beg=3,end=len(str_test))
+TypeError: count() takes no keyword arguments
+str_test.count('p',3)
+Out[56]: 
+0
+str_test.find('类型')
+Out[57]: 
+9
+str_test.find('数据')
+Out[58]: 
+7
+str_test.find('w')
+Out[59]: 
+-1
+str_test.index('类')
+Out[60]: 
+9
+str_test.index('w')
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-61-20d814d07042>", line 1, in <module>
+    str_test.index('w')
+ValueError: substring not found
+'我'.encode()
+Out[62]: 
+b'\xe6\x88\x91'
+str_test.islower()
+Out[63]: 
+True
+str_test='Python数据类型'
+str_test.islower()
+Out[65]: 
+False
+'/'.join(str_test)
+Out[66]: 
+'P/y/t/h/o/n/数/据/类/型'
+'/'.join()
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-67-0cf58480228c>", line 1, in <module>
+    '/'.join()
+TypeError: join() takes exactly one argument (0 given)
+str_test.replace('python','PYTHON')
+Out[68]: 
+'Python数据类型'
+str_test
+Out[69]: 
+'Python数据类型'
+str_test.replace('Python','PYTHON')
+Out[70]: 
+'PYTHON数据类型'
+str_test.split(O)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-71-7f519f9af22b>", line 1, in <module>
+    str_test.split(O)
+NameError: name 'O' is not defined
+str_test.split('O')
+Out[72]: 
+['Python数据类型']
+str_test.split('数据')
+Out[73]: 
+['Python', '类型']
+str_test.split('o',3)
+Out[74]: 
+['Pyth', 'n数据类型']
+str_test.split('o',1)
+Out[75]: 
+['Pyth', 'n数据类型']
+str_test.split('on',1)
+Out[76]: 
+['Pyth', '数据类型']
+str_test.split('on',2)
+Out[77]: 
+['Pyth', '数据类型']
+str_test.split('数',maxsplit=2)
+Out[78]: 
+['Python', '据类型']
+str_test.split('数',maxsplit=3)
+Out[79]: 
+['Python', '据类型']
+str_test1='pypypyththon数据类型'
+str_test1.split('py',maxsplit=2)
+Out[81]: 
+['', '', 'pyththon数据类型']
+str_test1.split()
+Out[82]: 
+['pypypyththon数据类型']
+str_test1.split('py',3)
+Out[83]: 
+['', '', '', 'ththon数据类型']
+str_test1.split('y',3)
+Out[84]: 
+['p', 'p', 'p', 'ththon数据类型']
+str_test1.split('py',2).lstrip()
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-85-a7a6fe5bed6c>", line 1, in <module>
+    str_test1.split('py',2).lstrip()
+AttributeError: 'list' object has no attribute 'lstrip'
+str_test1='      Python数据类型'
+str_test2='      Python数据类型'
+str_test2
+Out[88]: 
+'      Python数据类型'
+str_test2.lstrip()
+Out[89]: 
+'Python数据类型'
+str_test1[3]
+Out[90]: 
+' '
+str_test[3]
+Out[91]: 
+'h'
+str_test[-1]
+Out[92]: 
+'型'
+a='python程序'
+b=[1,4,7,]
+c=('w','o','m',)
+a[1]
+Out[96]: 
+'y'
+b
+Out[97]: 
+[1, 4, 7]
+b[-1]
+Out[98]: 
+7
+c[-2]
+Out[99]: 
+'o'
+a[-5]
+Out[100]: 
+'h'
+b[1]
+Out[101]: 
+4
+c[2]
+Out[102]: 
+'m'
+c[3]
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-103-91503357a59f>", line 1, in <module>
+    c[3]
+IndexError: tuple index out of range
+a[2:5]
+Out[104]: 
+'tho'
+a[2:8]
+Out[105]: 
+'thon程序'
+a[2:11]
+Out[106]: 
+'thon程序'
+a[-1:11]
+Out[107]: 
+'序'
+a[-1:18]
+Out[108]: 
+'序'
+a[-1:-8]
+Out[109]: 
+''
+a[-1:-4]
+Out[110]: 
+''
+a[-1:0]
+Out[111]: 
+''
+a[-1:4]
+Out[112]: 
+''
+a[-1]
+Out[113]: 
+'序'
+a[-1:8]
+Out[114]: 
+'序'
+a[-1:4]
+Out[115]: 
+''
+a[-1:9]
+Out[116]: 
+'序'
+a[1:8:2]
+Out[117]: 
+'yhn序'
+a[1:8:-2]
+Out[118]: 
+''
+a[1:8:]
+Out[119]: 
+'ython程序'
+a+b
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-120-f1d53b280433>", line 1, in <module>
+    a+b
+TypeError: must be str, not list
+c
+Out[121]: 
+('w', 'o', 'm')
+b
+Out[122]: 
+[1, 4, 7]
+a
+Out[123]: 
+'python程序'
+a*2
+Out[124]: 
+'python程序python程序'
+a+a
+Out[125]: 
+'python程序python程序'
+len(a)
+Out[126]: 
+8
+print(len(a),len(b),len(c))
+8 3 3
+all(a)
+Out[128]: 
+True
+all(a,b,c)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-129-2a7908313f5c>", line 1, in <module>
+    all(a,b,c)
+TypeError: all() takes exactly one argument (3 given)
+any(a)
+Out[130]: 
+True
+d='00000'
+all(a)
+Out[132]: 
+True
+d='00000'
+alll
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-134-856b6777e46b>", line 1, in <module>
+    alll
+NameError: name 'alll' is not defined
+d='000'
+all(d)
+Out[136]: 
+True
+d=''
+all(d)
+Out[138]: 
+True
+d=0
+all(d)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-140-7578a7556535>", line 1, in <module>
+    all(d)
+TypeError: 'int' object is not iterable
+d=[0,0,0]
+all(d)
+Out[142]: 
+False
+any
+Out[143]: 
+<function any>
+any(d)
+Out[144]: 
+False
+d=(0,0,1)
+all(d)
+Out[146]: 
+False
+any(d)
+Out[147]: 
+True
+d='0'
+all(d)
+Out[149]: 
+True
+d=''
+all(d)
+Out[151]: 
+True
+d='None,'
+all(d)
+Out[153]: 
+True
+d='010'
+all(d)
+Out[155]: 
+True
+f=[0,1,0]
+all(f)
+Out[157]: 
+False
+any(f)
+Out[158]: 
+True
+all(d)
+Out[159]: 
+True
+for i in a:
+    print(i)
+    
+p
+y
+t
+h
+o
+n
+程
+序
+for i in a:
+    print(i,end='')
+    
+python程序In[162]: {name:'张三',year:11}
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-162-07d150f690d0>", line 1, in <module>
+    {name:'张三',year:11}
+NameError: name 'name' is not defined
+people = {'name':['张三','李四']}
+peolle[name]
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-164-5df7c524b852>", line 1, in <module>
+    peolle[name]
+NameError: name 'peolle' is not defined
+peolle['name']
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-165-3d30bf794600>", line 1, in <module>
+    peolle['name']
+NameError: name 'peolle' is not defined
+peolpe['name']
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-166-dd4f5ada2de6>", line 1, in <module>
+    peolpe['name']
+NameError: name 'peolpe' is not defined
+people = {'name':['张三','李四']}
+people[name]
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-168-b88d70bf6d13>", line 1, in <module>
+    people[name]
+NameError: name 'name' is not defined
+people['name']
+Out[169]: 
+['张三', '李四']
+people={'张三':17,'李四':22,'王五':19}
+people['张三']
+Out[171]: 
+17
+people
+Out[172]: 
+{'张三': 17, '李四': 22, '王五': 19}
+people1=people.copy()
+people
+Out[174]: 
+{'张三': 17, '李四': 22, '王五': 19}
+people1.clear()
+people1
+Out[176]: 
+{}
+people.items()
+Out[177]: 
+dict_items([('张三', 17), ('李四', 22), ('王五', 19)])
+people.values()
+Out[178]: 
+dict_values([17, 22, 19])
+people.keys()
+Out[179]: 
+dict_keys(['张三', '李四', '王五'])
+people1={'张三':22,'赵四':19}
+people.update(people1)
+people
+Out[182]: 
+{'张三': 22, '李四': 22, '王五': 19, '赵四': 19}
+people.update{'赵四':21}
+  File "<ipython-input-183-fe1aad5e1803>", line 1
+    people.update{'赵四':21}
+                 ^
+SyntaxError: invalid syntax
+people.update('赵四':21)
+  File "<ipython-input-184-42598d844ebb>", line 1
+    people.update('赵四':21)
+                      ^
+SyntaxError: invalid syntax
+people.update()
+people('张三')
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-186-287caedd136d>", line 1, in <module>
+    people('张三')
+TypeError: 'dict' object is not callable
+people['张三']
+Out[187]: 
+22
+people.get()
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-188-52eee9b83879>", line 1, in <module>
+    people.get()
+TypeError: get expected at least 1 arguments, got 0
+people.get('张三')
+Out[189]: 
+22
+people.get('紫忆')
+people.get('紫忆',default=ziyi)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-191-b5012f61ac7f>", line 1, in <module>
+    people.get('紫忆',default=ziyi)
+NameError: name 'ziyi' is not defined
+people.get('紫忆',default='ziyi')
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-192-646ba932a484>", line 1, in <module>
+    people.get('紫忆',default='ziyi')
+TypeError: get() takes no keyword arguments
+people.get('紫忆','ziyi')
+Out[193]: 
+'ziyi'
+people.popitem()
+Out[194]: 
+('赵四', 19)
+people
+Out[195]: 
+{'张三': 22, '李四': 22, '王五': 19}
+people.pop()
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-196-e6e5eee74171>", line 1, in <module>
+    people.pop()
+TypeError: pop expected at least 1 arguments, got 0
+people.pop('王五')
+Out[197]: 
+19
+people.fromkeys()
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-198-47dfb3e4435e>", line 1, in <module>
+    people.fromkeys()
+TypeError: fromkeys expected at least 1 arguments, got 0
+people.fromkeys('张三')
+Out[199]: 
+{'三': None, '张': None}
+people.fromkeys(key)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-200-64cd67b5cb3e>", line 1, in <module>
+    people.fromkeys(key)
+NameError: name 'key' is not defined
+a='紫忆'
+b=['张三','李四']
+people[a]=18
+people
+Out[204]: 
+{'张三': 22, '李四': 22, '紫忆': 18}
+people[b]=[15,17]
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-205-f757d0ac2a1a>", line 1, in <module>
+    people[b]=[15,17]
+TypeError: unhashable type: 'list'
+set([1,5,2,1,4,2])
+Out[206]: 
+{1, 2, 4, 5}
+a=set([1,5,2,1,4,2])
+a.add(3)
+a
+Out[209]: 
+{1, 2, 3, 4, 5}
+a.add(3)
+a
+Out[211]: 
+{1, 2, 3, 4, 5}
+a.update(4)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-212-34f679f970fc>", line 1, in <module>
+    a.update(4)
+TypeError: 'int' object is not iterable
+a.update([12,23,])
+a
+Out[214]: 
+{1, 2, 3, 4, 5, 12, 23}
+a.copy([22])
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-215-89a967e5b72b>", line 1, in <module>
+    a.copy([22])
+TypeError: copy() takes no arguments (1 given)
+b=a.copy()
+b
+Out[217]: 
+{1, 2, 3, 4, 5, 12, 23}
+b.clear()
+b
+Out[219]: 
+set()
+b=a.copy()
+b
+Out[221]: 
+{1, 2, 3, 4, 5, 12, 23}
+b.pop(23)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-222-73583777a198>", line 1, in <module>
+    b.pop(23)
+TypeError: pop() takes no arguments (1 given)
+b.pop()
+Out[223]: 
+1
+b.pop()
+Out[224]: 
+2
+b.pop()
+Out[225]: 
+3
+b.add(32)
+b.add(-7)
+b
+Out[228]: 
+{-7, 4, 5, 12, 23, 32}
+a
+Out[229]: 
+{1, 2, 3, 4, 5, 12, 23}
+a|b
+Out[230]: 
+{-7, 1, 2, 3, 4, 5, 12, 23, 32}
+a&b
+Out[231]: 
+{4, 5, 12, 23}
+a-b
+Out[232]: 
+{1, 2, 3}
+b-a
+Out[233]: 
+{-7, 32}
+a^b
+Out[234]: 
+{-7, 1, 2, 3, 32}
+frozeset(b)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-235-23b5456f6b01>", line 1, in <module>
+    frozeset(b)
+NameError: name 'frozeset' is not defined
+c=frozeset([1,2,5])
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-236-34b296e64895>", line 1, in <module>
+    c=frozeset([1,2,5])
+NameError: name 'frozeset' is not defined
+frozenset(b)
+Out[237]: 
+frozenset({-7, 4, 5, 12, 23, 32})
+c=frozenset(a)
+c
+Out[239]: 
+frozenset({1, 2, 3, 4, 5, 12, 23})
+c.add(5)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-240-d97878c0e5f1>", line 1, in <module>
+    c.add(5)
+AttributeError: 'frozenset' object has no attribute 'add'
+a='数据转换'
+list(a)
+Out[242]: 
+['数', '据', '转', '换']
+tuple(a)
+Out[243]: 
+('数', '据', '转', '换')
+dict(a)
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-244-d4c28b63d341>", line 1, in <module>
+    dict(a)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+set(a)
+Out[245]: 
+{'换', '据', '数', '转'}
+str(a)
+Out[246]: 
+'数据转换'
+b =1.33
+int(b)
+Out[248]: 
+1
+c=int(b)
+float(int(b))
+Out[250]: 
+1.0
+b
+Out[251]: 
+1.33
+type(b)
+Out[252]: 
+float
+type(a)
+Out[253]: 
+str
+id(a)
+Out[254]: 
+554194238768
+id(b)
+Out[255]: 
+554194397824
+dir(set())
+Out[256]: 
+['__and__',
+ '__class__',
+ '__contains__',
+ '__delattr__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__gt__',
+ '__hash__',
+ '__iand__',
+ '__init__',
+ '__init_subclass__',
+ '__ior__',
+ '__isub__',
+ '__iter__',
+ '__ixor__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__or__',
+ '__rand__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__ror__',
+ '__rsub__',
+ '__rxor__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__sub__',
+ '__subclasshook__',
+ '__xor__',
+ 'add',
+ 'clear',
+ 'copy',
+ 'difference',
+ 'difference_update',
+ 'discard',
+ 'intersection',
+ 'intersection_update',
+ 'isdisjoint',
+ 'issubset',
+ 'issuperset',
+ 'pop',
+ 'remove',
+ 'symmetric_difference',
+ 'symmetric_difference_update',
+ 'union',
+ 'update']
+dir(set(),end='')
+Traceback (most recent call last):
+  File "D:\anaconda python\lib\site-packages\IPython\core\interactiveshell.py", line 2881, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-257-c4406e13e992>", line 1, in <module>
+    dir(set(),end='')
+TypeError: dir() takes no keyword arguments
+help(set())
+Help on set object:
+class set(object)
+ |  set() -> new empty set object
+ |  set(iterable) -> new set object
+ |  
+ |  Build an unordered collection of unique elements.
+ |  
+ |  Methods defined here:
+ |  
+ |  __and__(self, value, /)
+ |      Return self&value.
+ |  
+ |  __contains__(...)
+ |      x.__contains__(y) <==> y in x.
+ |  
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |  
+ |  __ge__(self, value, /)
+ |      Return self>=value.
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __gt__(self, value, /)
+ |      Return self>value.
+ |  
+ |  __iand__(self, value, /)
+ |      Return self&=value.
+ |  
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __ior__(self, value, /)
+ |      Return self|=value.
+ |  
+ |  __isub__(self, value, /)
+ |      Return self-=value.
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __ixor__(self, value, /)
+ |      Return self^=value.
+ |  
+ |  __le__(self, value, /)
+ |      Return self<=value.
+ |  
+ |  __len__(self, /)
+ |      Return len(self).
+ |  
+ |  __lt__(self, value, /)
+ |      Return self<value.
+ |  
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  __or__(self, value, /)
+ |      Return self|value.
+ |  
+ |  __rand__(self, value, /)
+ |      Return value&self.
+ |  
+ |  __reduce__(...)
+ |      Return state information for pickling.
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __ror__(self, value, /)
+ |      Return value|self.
+ |  
+ |  __rsub__(self, value, /)
+ |      Return value-self.
+ |  
+ |  __rxor__(self, value, /)
+ |      Return value^self.
+ |  
+ |  __sizeof__(...)
+ |      S.__sizeof__() -> size of S in memory, in bytes
+ |  
+ |  __sub__(self, value, /)
+ |      Return self-value.
+ |  
+ |  __xor__(self, value, /)
+ |      Return self^value.
+ |  
+ |  add(...)
+ |      Add an element to a set.
+ |      
+ |      This has no effect if the element is already present.
+ |  
+ |  clear(...)
+ |      Remove all elements from this set.
+ |  
+ |  copy(...)
+ |      Return a shallow copy of a set.
+ |  
+ |  difference(...)
+ |      Return the difference of two or more sets as a new set.
+ |      
+ |      (i.e. all elements that are in this set but not the others.)
+ |  
+ |  difference_update(...)
+ |      Remove all elements of another set from this set.
+ |  
+ |  discard(...)
+ |      Remove an element from a set if it is a member.
+ |      
+ |      If the element is not a member, do nothing.
+ |  
+ |  intersection(...)
+ |      Return the intersection of two sets as a new set.
+ |      
+ |      (i.e. all elements that are in both sets.)
+ |  
+ |  intersection_update(...)
+ |      Update a set with the intersection of itself and another.
+ |  
+ |  isdisjoint(...)
+ |      Return True if two sets have a null intersection.
+ |  
+ |  issubset(...)
+ |      Report whether another set contains this set.
+ |  
+ |  issuperset(...)
+ |      Report whether this set contains another set.
+ |  
+ |  pop(...)
+ |      Remove and return an arbitrary set element.
+ |      Raises KeyError if the set is empty.
+ |  
+ |  remove(...)
+ |      Remove an element from a set; it must be a member.
+ |      
+ |      If the element is not a member, raise a KeyError.
+ |  
+ |  symmetric_difference(...)
+ |      Return the symmetric difference of two sets as a new set.
+ |      
+ |      (i.e. all elements that are in exactly one of the sets.)
+ |  
+ |  symmetric_difference_update(...)
+ |      Update a set with the symmetric difference of itself and another.
+ |  
+ |  union(...)
+ |      Return the union of sets as a new set.
+ |      
+ |      (i.e. all elements that are in either set.)
+ |  
+ |  update(...)
+ |      Update a set with the union of itself and others.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __hash__ = None
+
+
+
+ |  ---------------------------------------------------------------------- |  ---------------------------------------------------------------------- |  ---------------------------------------------------------------------- |  ----------------------------------------------------------------------cpython的程序
+Microsoft Windows [版本 6.3.9600]
+(c) 2013 Microsoft Corporation。保留所有权利。
+
+D:\vernacular>a = 3, b = -1
+'a' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\vernacular>python3.6
+Python 3.6.0 |Anaconda custom (64-bit)| (default, Dec 23 2016, 11:57:41) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a = 3 , b =-1
+  File "<stdin>", line 1
+SyntaxError: can't assign to literal
+>>> exit
+Use exit() or Ctrl-Z plus Return to exit
+>>> exit()
+
+D:\vernacular>python3.6
+Python 3.6.0 |Anaconda custom (64-bit)| (default, Dec 23 2016, 11:57:41) [MSC v.1900 6
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a=3
+>>> b=1.5
+>>> a+b
+4.5
+>>> a/b
+2.0
+>>> a>b
+True
+>>> exit()
+
+D:\vernacular>python3.6
+Python 3.6.0 |Anaconda custom (64-bit)| (default, Dec 23 2016, 11:57:41) [MSC v.1900 6
+4 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> list(range(10,0,-1))
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+>>> list(range(10,))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> list1=[]
+>>> for i in range(10):
+... list1.append(i+i)
+  File "<stdin>", line 2
+    list1.append(i+i)
+        ^
+IndentationError: expected an indented block
+>>> for i in range(10):
+...     list1.append(i+i)
+... print(list1)
+  File "<stdin>", line 3
+    print(list1)
+        ^
+SyntaxError: invalid syntax
+>>> print(list1)
+[]
+>>>     list1.append(i+i)
+  File "<stdin>", line 1
+    list1.append(i+i)
+    ^
+IndentationError: unexpected indent
+>>> for i in range(10):
+...     list1.append(i+i)
+... print(list1)
+  File "<stdin>", line 3
+    print(list1)
+        ^
+SyntaxError: invalid syntax
+>>> list1
+[]
+>>> for i in range(10):
+...     list1.append(i+i)
+... list1
+  File "<stdin>", line 3
+    list1
+        ^
+SyntaxError: invalid syntax
+>>> for i in range(10):
+...     list1.append(i+i)
+...     print(list1)
+...
+[0]
+[0, 2]
+[0, 2, 4]
+[0, 2, 4, 6]
+[0, 2, 4, 6, 8]
+[0, 2, 4, 6, 8, 10]
+[0, 2, 4, 6, 8, 10, 12]
+[0, 2, 4, 6, 8, 10, 12, 14]
+[0, 2, 4, 6, 8, 10, 12, 14, 16]
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+>>> for i in range(10):
+...     list1.append(i+i)
+... print(list1)
+  File "<stdin>", line 3
+    print(list1)
+        ^
+SyntaxError: invalid syntax
+>>> [5]
+[5]
+>>> [i+5 for i in range(10)]
+[5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+>>> [i+5 for i in range(50) if i%5==0]
+[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+>>> list_generator=(i+5 for i in range(50) if i%5==0)
+>>>
+>>> list_generator=(i+5 for i in range(50) if i%5==0)
+>>> print(list_generator)
+<generator object <genexpr> at 0x000000321C71AAF0>
+>>> list_generator.__next__()
+5
+>>> list_generator.__next__()
+10
+>>> exit()
