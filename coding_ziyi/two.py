@@ -13,3 +13,5 @@ if __name__ == "__main__":
 else:
     print("two.py is being imported into another module")
 
+'这下终于清静了不少' \
+'分支的内容先add再commit没有必要push'
