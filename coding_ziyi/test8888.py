@@ -44,8 +44,6 @@ except Exception as e:
     print('任何异常原因',e)
 except:
     print('异常通配符，无法知道原因')
-else:
-    print('没有异常时执行')
 finally:
     print('程序正常执行')
     print('其他小bug别跑，程序报错')
